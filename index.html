@@ -1,0 +1,452 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brown Sugar &amp; Ink</title>
+<meta name="description" content="E.L. Willis writes paranormal and small-town Southern BWWM romance with explicit heat. Stories with heat. Written with love.">
+<link rel="canonical" href="https://brownsugarandink.com/">
+<meta name="theme-color" content="#0a0810">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Brown Sugar &amp; Ink">
+<meta property="og:title" content="Brown Sugar &amp; Ink | E.L. Willis">
+<meta property="og:description" content="Stories with heat. Written with love. Paranormal and small-town Southern BWWM romance with explicit heat.">
+<meta property="og:url" content="https://brownsugarandink.com/">
+<meta property="og:image" content="https://brownsugarandink.com/images/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@500;600&family=Jost:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: a neon sign over black bayou water. The hero is the painting itself, fireflies drifting through it and the sign buzzing; the book sits under a candlelit Tennessee window; one line of hers gets the whole screen over the swirl of neon; the author closes it out. */
+:root {
+  --ink: #0a0810;        /* page ground: black with a violet cast, same as the water */
+  --ink-raised: #130f1d; /* quiet surfaces */
+  --night: #140f24;      /* violet night band behind the book */
+  --cream: #f8eff1;      /* text */
+  --cream-dim: #cbc0cc;  /* secondary text */
+  --pink: #ff5aa5;       /* neon magenta */
+  --teal: #3fe3d2;       /* neon teal */
+  --amber: #ffb84d;      /* neon amber and firefly light */
+  --display: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+  --wordmark: "Cormorant SC", "Cormorant Garamond", Georgia, serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --label: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --gutter: clamp(16px, 4vw, 48px);
+  --measure: 62ch;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--amber); }
+a:focus-visible, .btn:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+.wrap { width: 100%; max-width: 1180px; margin-inline: auto; padding-inline: var(--gutter); }
+.label {
+  font-family: var(--label);
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0;
+}
+h1, h2, h3 { font-family: var(--display); font-weight: 600; text-wrap: balance; margin: 0; line-height: 1.05; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Header */
+.site-header {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--ink) 80%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid color-mix(in srgb, var(--teal) 18%, transparent);
+}
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; flex-wrap: wrap; }
+.wordmark-sm { font-family: var(--wordmark); font-size: 1.35rem; letter-spacing: 0.05em; color: var(--cream); text-decoration: none; line-height: 1; }
+.amp { color: var(--amber); font-family: var(--display); font-style: italic; font-weight: 400; text-transform: none; }
+.site-nav { display: flex; gap: clamp(14px, 3vw, 32px); }
+.site-nav a { font-family: var(--label); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cream-dim); text-decoration: none; }
+.site-nav a:hover { color: var(--pink); }
+
+/* Hero: the painting is the page. Text rides on the dark trees at left, the sign holds the right. */
+.hero { position: relative; display: grid; max-width: 1920px; margin-inline: auto; overflow: hidden; }
+.hero > * { grid-area: 1 / 1; }
+.hero-media { position: relative; aspect-ratio: 16 / 9; min-height: 0; }
+.hero-media picture, .hero-media img { display: block; width: 100%; height: 100%; }
+.hero-media img { object-fit: cover; }
+.hero-media::after { /* fade the painting into the page at the bottom and the left edge */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(10,8,16,.88) 0%, rgba(10,8,16,.55) 26%, rgba(10,8,16,0) 52%),
+    linear-gradient(180deg, rgba(10,8,16,0) 70%, var(--ink) 100%);
+}
+.hero-media canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+.buzz { /* a soft buzzing halo laid over the sign */
+  position: absolute; left: 58%; top: 12%; width: 28%; height: 44%; z-index: 1; pointer-events: none;
+  background: radial-gradient(ellipse at 50% 50%, color-mix(in srgb, var(--pink) 42%, transparent) 0%, color-mix(in srgb, var(--teal) 16%, transparent) 45%, transparent 72%);
+  mix-blend-mode: screen; opacity: .5;
+  animation: buzz 6.5s steps(1, end) infinite;
+}
+@keyframes buzz {
+  0%   { opacity: .55; } 8%  { opacity: .7; } 9%  { opacity: .32; } 10% { opacity: .68; }
+  34%  { opacity: .58; } 55% { opacity: .72; } 56% { opacity: .4; } 57% { opacity: .7; } 58% { opacity: .36; } 59% { opacity: .66; }
+  80%  { opacity: .6; }  100% { opacity: .55; }
+}
+.hero-text { position: relative; z-index: 2; align-self: center; display: grid; gap: 22px; padding-inline: var(--gutter); max-width: min(34rem, 46%); margin-left: max(0px, calc((100% - 1180px) / 2)); }
+.tagline { font-family: var(--display); font-style: italic; font-weight: 500; font-size: clamp(1.9rem, 3.6vw, 3.1rem); line-height: 1.12; margin: 0; color: var(--cream); text-shadow: 0 0 24px rgba(255, 90, 165, .35); }
+.tagline span { display: block; }
+.tagline span + span { color: var(--pink); }
+.hero p.lede { margin: 0; max-width: 40ch; color: var(--cream-dim); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--label); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  text-decoration: none; padding: 14px 24px; border-radius: 2px;
+  border: 1px solid var(--amber); color: var(--ink); background: var(--amber);
+  transition: background .2s ease, color .2s ease, box-shadow .3s ease, border-color .2s ease;
+}
+.btn:hover { background: var(--cream); border-color: var(--cream); box-shadow: 0 0 30px 2px color-mix(in srgb, var(--amber) 40%, transparent); }
+.btn.ghost { background: transparent; color: var(--teal); border-color: var(--teal); }
+.btn.ghost:hover { background: color-mix(in srgb, var(--teal) 14%, transparent); color: var(--cream); border-color: var(--teal); box-shadow: 0 0 30px 2px color-mix(in srgb, var(--teal) 35%, transparent); }
+
+/* Book: a candlelit window over Hallow Ridge, then the book */
+.book { background: linear-gradient(180deg, var(--ink) 0%, var(--night) 22%, var(--night) 84%, var(--ink) 100%); position: relative; overflow: hidden; }
+.scene { position: relative; height: clamp(220px, 36vw, 520px); max-width: 1920px; margin-inline: auto; }
+.scene img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
+.scene::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, var(--ink) 0%, rgba(10,8,16,0) 22%, rgba(10,8,16,0) 55%, var(--night) 100%);
+}
+.scene canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+.book .wrap { position: relative; display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(28px, 6vw, 88px); padding-block: clamp(32px, 6vw, 80px) clamp(56px, 9vw, 120px); align-items: start; }
+.book .wrap::before { /* a slow pink breath behind the cover */
+  content: ""; position: absolute; left: 6%; top: 8%; width: 46vmax; height: 46vmax; transform: translate(-30%, -10%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--pink) 15%, transparent) 0%, transparent 60%);
+  pointer-events: none; animation: breathe 7s ease-in-out infinite;
+}
+@keyframes breathe { 0%, 100% { opacity: .7; } 50% { opacity: 1; } }
+.cover { position: sticky; top: 100px; perspective: 1200px; }
+.cover img {
+  width: 100%; max-width: 380px; margin-inline: auto;
+  transform: rotateY(-8deg) rotateX(2deg); transform-origin: left center;
+  box-shadow: 24px 34px 60px -20px rgba(0,0,0,.85), 0 0 0 1px rgba(0,0,0,.3), 0 0 90px -10px color-mix(in srgb, var(--pink) 35%, transparent), 0 0 40px -12px color-mix(in srgb, var(--teal) 40%, transparent);
+  transition: transform .6s cubic-bezier(.2,.7,.2,1);
+}
+.cover:hover img { transform: rotateY(0) rotateX(0); }
+.book-text { display: grid; gap: 20px; min-width: 0; }
+.book h2 { font-size: clamp(2.6rem, 5.4vw, 4rem); }
+.series { font-family: var(--display); font-style: italic; font-size: 1.3rem; color: var(--cream-dim); margin: -8px 0 0; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+.facts li { font-family: var(--label); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 12px; border: 1px solid color-mix(in srgb, var(--teal) 45%, transparent); border-radius: 999px; color: var(--cream); }
+.blurb { display: grid; gap: 14px; max-width: var(--measure); }
+.blurb p { margin: 0; }
+.blurb .hook { font-family: var(--display); font-size: clamp(1.6rem, 2.8vw, 2.1rem); font-style: italic; line-height: 1.25; color: var(--cream); }
+.blurb .note { font-size: 0.92rem; color: var(--cream-dim); border-top: 1px solid color-mix(in srgb, var(--cream) 16%, transparent); padding-top: 14px; }
+.ku {
+  display: flex; align-items: center; gap: 14px; margin: 4px 0 0;
+  font-family: var(--display); font-size: 1.35rem; font-style: italic; color: var(--amber);
+}
+.ku::before { content: ""; width: 34px; height: 1px; background: var(--amber); flex: none; }
+
+/* The line: over the swirl of neon */
+.line { position: relative; overflow: hidden; text-align: center; background: var(--ink) url("images/bg-swirl.jpg") center / cover no-repeat; }
+.line::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 50%, rgba(10,8,16,.86) 0%, rgba(10,8,16,.68) 60%, rgba(10,8,16,.5) 100%),
+    linear-gradient(180deg, var(--ink) 0%, rgba(10,8,16,0) 18%, rgba(10,8,16,0) 82%, var(--ink) 100%);
+}
+.line .wrap { position: relative; display: grid; gap: 22px; justify-items: center; padding-block: clamp(84px, 13vw, 176px); }
+.line blockquote { margin: 0; }
+.line blockquote p {
+  margin: 0; font-family: var(--display); font-style: italic; font-weight: 400;
+  font-size: clamp(2.3rem, 6.4vw, 5.2rem); line-height: 1.08; text-wrap: balance; max-width: 18ch;
+  text-shadow: 0 2px 30px rgba(10,8,16,.8);
+}
+.line blockquote p span { display: block; }
+.line blockquote p span + span { color: var(--pink); text-shadow: 0 0 28px rgba(255, 90, 165, .5); }
+.line cite { font-family: var(--label); font-style: normal; font-size: 0.75rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--cream); }
+
+/* About */
+.about .wrap { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(24px, 6vw, 80px); align-items: start; padding-block: clamp(56px, 9vw, 112px); }
+.about-head { display: grid; gap: 14px; min-width: 0; }
+.about h2 { font-family: var(--wordmark); font-weight: 500; font-size: clamp(2.8rem, 6vw, 4.6rem); letter-spacing: 0.02em; }
+.about-text { display: grid; gap: 18px; min-width: 0; max-width: var(--measure); }
+.about p { margin: 0; color: var(--cream-dim); }
+.about p strong { color: var(--cream); font-weight: 600; }
+
+/* News */
+.news { background: var(--ink-raised); position: relative; }
+.news::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px; background: linear-gradient(90deg, var(--teal), var(--pink), var(--amber)); opacity: .75; }
+.news .wrap { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px 32px; padding-block: 40px; }
+.news h2 { font-size: clamp(1.7rem, 3.2vw, 2.2rem); font-style: italic; font-weight: 500; }
+.news p { margin: 0; color: var(--cream-dim); max-width: 52ch; }
+
+/* Footer */
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; padding-block: 32px 48px; font-family: var(--label); font-size: 0.8rem; letter-spacing: 0.06em; color: var(--cream-dim); }
+footer p { margin: 0; }
+
+/* Phone and small tablet: the painting stacks on top and the words sit under it */
+@media (max-width: 800px) {
+  .hero { display: block; }
+  .hero-media { aspect-ratio: 1100 / 1250; max-height: 78svh; }
+  .hero-media img { object-position: 42% 50%; }
+  .hero-media::after { background: linear-gradient(180deg, rgba(10,8,16,0) 55%, var(--ink) 100%); }
+  .buzz { left: 12%; top: 8%; width: 60%; height: 50%; }
+  .hero-text { max-width: none; margin: -56px 0 0; padding-block: 0 48px; }
+  .book .wrap, .about .wrap { grid-template-columns: minmax(0, 1fr); }
+  .cover { position: static; }
+  .cover img { max-width: 260px; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .buzz { animation: none; opacity: .5; }
+  .book .wrap::before { animation: none; }
+  .cover img { transition: none; }
+}
+</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark-sm" href="#top">Brown Sugar <span class="amp">&amp;</span> Ink</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#books">Books</a>
+      <a href="#about">About</a>
+      <a href="#news">News</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="site-name">
+    <div class="hero-media">
+      <picture>
+        <source media="(max-width: 800px)" srcset="images/hero-bayou-phone.jpg">
+        <img src="images/hero-bayou.jpg" alt="A neon sign reading Brown Sugar and Ink glows teal, pink and amber beside a small motel at the edge of a misty bayou, fireflies drifting over the black water" width="2400" height="1345" fetchpriority="high">
+      </picture>
+      <div class="buzz" aria-hidden="true"></div>
+      <canvas id="fireflies" aria-hidden="true"></canvas>
+    </div>
+    <div class="hero-text">
+      <h1 class="sr-only" id="site-name">Brown Sugar &amp; Ink</h1>
+      <p class="label">Romance by E.L. Willis</p>
+      <p class="tagline"><span>Stories with heat.</span><span>Written with love.</span></p>
+      <p class="lede">Paranormal and small-town Southern romance. Black women at the center of the magic, men who can't look away, and the heat turned all the way up.</p>
+      <div class="actions">
+        <a class="btn" href="#books">Start with The Quiet Acre</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="book" id="books" aria-labelledby="book-title">
+    <div class="scene">
+      <img src="images/scene-candle.jpg" alt="A candle burns on a windowsill beside a jar of magnolia blossoms, looking out over a starlit Tennessee ridge at night" width="2000" height="1118" loading="lazy">
+      <canvas id="embers" aria-hidden="true"></canvas>
+    </div>
+    <div class="wrap">
+      <div class="cover">
+        <img src="images/the-quiet-acre-cover.jpg" alt="Cover of The Quiet Acre by E.L. Willis: an ink-wash mountain above a buried graveyard, with a single point of golden light" width="1000" height="1529">
+      </div>
+      <div class="book-text">
+        <p class="label">Hallow Ridge · Book 1</p>
+        <h2 id="book-title">The Quiet Acre</h2>
+        <p class="series">A supernatural mystery thriller romance</p>
+        <ul class="facts" aria-label="About this book">
+          <li>Hallow Ridge, Tennessee</li>
+          <li>BWWM</li>
+          <li>Forensic anthropologist × deputy</li>
+          <li>Explicit</li>
+        </ul>
+        <div class="blurb">
+          <p class="hook">The ground in Hallow Ridge, Tennessee doesn't give up its dead. Not willingly.</p>
+          <p>When forensic anthropologist Dr. Opal Kincaid is called to examine what should have been historic remains in an unmarked mountain cemetery, she finds something far worse — a fifteen-year-old murder victim the whole town swore just ran away. Now Opal is asking questions nobody wants answered, in a place where silence isn't just a habit. It's a covenant.</p>
+          <p>Deputy Cal Collins was supposed to keep an eye on the outsider. He wasn't supposed to want her. And he damn sure wasn't supposed to let her get close enough to discover what runs in his blood — a gift that lets him read secrets through skin. Every touch is a confession. Every lie has a taste.</p>
+          <p>But Opal doesn't flinch. Not from the dead, not from the truth, and not from him.</p>
+          <p>The deeper they dig, the more dangerous Hallow Ridge becomes — because someone killed to keep this secret buried, and the mountain that watches over this town has been waiting a very long time to collect what it's owed.</p>
+          <p class="note">The Quiet Acre is a supernatural mystery thriller romance with explicit sexual content, featuring an interracial romance (BWWM) between a Black woman forensic anthropologist and a white Appalachian deputy with a gift he never wanted. Book 1 of the Hallow Ridge Series.</p>
+        </div>
+        <p class="ku">Read free with Kindle Unlimited</p>
+        <div class="actions">
+          <a class="btn" href="https://www.amazon.com/Quiet-Acre-Hallow-Ridge-Novel-ebook/dp/B0GT2BXZRD" target="_blank" rel="noopener">Read on Kindle</a>
+          <a class="btn ghost" href="https://us.amazon.com/Quiet-Acre-Hallow-Ridge-Novel/dp/B0GT2BRTYM" target="_blank" rel="noopener">Paperback</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="line" aria-label="From The Quiet Acre">
+    <div class="wrap">
+      <blockquote>
+        <p><span>Every touch is a confession.</span><span>Every lie has a taste.</span></p>
+      </blockquote>
+      <cite>The Quiet Acre</cite>
+    </div>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="wrap">
+      <div class="about-head">
+        <p class="label">About the author</p>
+        <h2 id="about-title">E.L. Willis</h2>
+      </div>
+      <div class="about-text">
+        <p>E.L. Willis writes paranormal and small-town Southern romance for readers who want the mystery, the magic and the heat on the same page.</p>
+        <p>Her heroines are <strong>where the power starts</strong>: Black women who are the source of the story's magic, loved hard by white heroes who can't look away. Every book is BWWM, every book is explicit, and every love story earns its way to the bedroom.</p>
+        <p>Brown Sugar &amp; Ink is her home for all of it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="news" id="news" aria-labelledby="news-title">
+    <div class="wrap">
+      <h2 id="news-title">New stories are on the way.</h2>
+      <p>A reader newsletter is coming soon, with release news first. Until then, you'll find every new book right here.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 E.L. Willis · Brown Sugar &amp; Ink</p>
+    <p>Books for adult readers, 18+</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) return;
+
+  /* Fireflies drifting through the bayou painting: slow wander, each one blinking on its own clock. */
+  (function () {
+    var canvas = document.getElementById('fireflies');
+    if (!canvas || !canvas.getContext) return;
+    var ctx = canvas.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var w = 0, h = 0, flies = [], last = 0, running = true;
+    function size() {
+      var r = canvas.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function make() {
+      return {
+        x: Math.random(), y: 0.2 + Math.random() * 0.75,
+        ax: 0.01 + Math.random() * 0.03, ay: 0.008 + Math.random() * 0.02,
+        px: Math.random() * 6.28, py: Math.random() * 6.28,
+        sp: 0.004 + Math.random() * 0.01,
+        blink: Math.random() * 6.28, bs: 0.012 + Math.random() * 0.02,
+        r: 1.2 + Math.random() * 1.8
+      };
+    }
+    for (var i = 0; i < 42; i++) flies.push(make());
+    function tick(t) {
+      if (!running) return;
+      var dt = Math.min((t - last) / 16.67, 3) || 1; last = t;
+      ctx.clearRect(0, 0, w, h);
+      for (var i = 0; i < flies.length; i++) {
+        var f = flies[i];
+        f.px += f.sp * dt; f.py += f.sp * 0.8 * dt; f.blink += f.bs * dt;
+        var a = Math.pow(Math.max(0, Math.sin(f.blink)), 2);
+        if (a < 0.02) continue;
+        var x = (f.x + Math.sin(f.px) * f.ax) * w, y = (f.y + Math.cos(f.py) * f.ay) * h;
+        var rad = f.r * (w < 700 ? 3.2 : 4.2);
+        var g = ctx.createRadialGradient(x, y, 0, x, y, rad);
+        g.addColorStop(0, 'rgba(255, 224, 150,' + (0.95 * a) + ')');
+        g.addColorStop(0.35, 'rgba(255, 184, 77,' + (0.45 * a) + ')');
+        g.addColorStop(1, 'rgba(255, 184, 77, 0)');
+        ctx.fillStyle = g;
+        ctx.beginPath(); ctx.arc(x, y, rad, 0, Math.PI * 2); ctx.fill();
+      }
+      requestAnimationFrame(tick);
+    }
+    size();
+    window.addEventListener('resize', size);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (en) {
+        var vis = en[0].isIntersecting;
+        if (vis && !running) { running = true; requestAnimationFrame(function (t) { last = t; tick(t); }); }
+        else if (!vis) running = false;
+      }).observe(canvas);
+    }
+    requestAnimationFrame(function (t) { last = t; tick(t); });
+  })();
+
+  /* Embers rising off the candle in the window scene. The flame sits at 19.8% across and 52.8% down the picture; the picture is cropped to fit, so the spot is worked out from how it is cropped. */
+  (function () {
+    var canvas = document.getElementById('embers');
+    if (!canvas || !canvas.getContext) return;
+    var img = canvas.parentNode.querySelector('img');
+    var FX = 0.198, FY = 0.528, POSY = 0.45;
+    var ctx = canvas.getContext('2d');
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var w = 0, h = 0, fx = 0, fy = 0, embers = [], last = 0, running = false;
+    function size() {
+      var r = canvas.getBoundingClientRect();
+      w = r.width; h = r.height;
+      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      var nw = img.naturalWidth || 2000, nh = img.naturalHeight || 1118;
+      var s = Math.max(w / nw, h / nh);
+      var dw = nw * s, dh = nh * s;
+      fx = (w - dw) * 0.5 + dw * FX;
+      fy = (h - dh) * POSY + dh * FY;
+    }
+    function spawn() {
+      embers.push({
+        x: fx + (Math.random() - 0.5) * 6, y: fy - 4,
+        vx: (Math.random() - 0.5) * 0.25, vy: -(0.3 + Math.random() * 0.5),
+        life: 0, max: 120 + Math.random() * 140,
+        r: 0.8 + Math.random() * 1.4, sway: Math.random() * 6.28
+      });
+    }
+    function tick(t) {
+      if (!running) return;
+      var dt = Math.min((t - last) / 16.67, 3) || 1; last = t;
+      ctx.clearRect(0, 0, w, h);
+      if (embers.length < 30 && Math.random() < 0.25 * dt) spawn();
+      for (var i = embers.length - 1; i >= 0; i--) {
+        var e = embers[i];
+        e.life += dt; e.sway += 0.03 * dt;
+        e.x += (e.vx + Math.sin(e.sway) * 0.25) * dt; e.y += e.vy * dt;
+        var k = e.life / e.max;
+        if (k >= 1) { embers.splice(i, 1); continue; }
+        var a = k < 0.15 ? k / 0.15 : 1 - (k - 0.15) / 0.85;
+        var g = ctx.createRadialGradient(e.x, e.y, 0, e.x, e.y, e.r * 4);
+        g.addColorStop(0, 'rgba(255, 214, 140,' + (0.9 * a) + ')');
+        g.addColorStop(1, 'rgba(255, 184, 77, 0)');
+        ctx.fillStyle = g;
+        ctx.beginPath(); ctx.arc(e.x, e.y, e.r * 4, 0, Math.PI * 2); ctx.fill();
+      }
+      requestAnimationFrame(tick);
+    }
+    function go() {
+      size();
+      window.addEventListener('resize', size);
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (en) {
+          var vis = en[0].isIntersecting;
+          if (vis && !running) { running = true; requestAnimationFrame(function (t) { last = t; tick(t); }); }
+          else if (!vis) running = false;
+        }).observe(canvas);
+      } else { running = true; requestAnimationFrame(function (t) { last = t; tick(t); }); }
+    }
+    if (img.complete) go(); else img.addEventListener('load', go);
+  })();
+})();
+</script>
+
+</body>
+</html>
